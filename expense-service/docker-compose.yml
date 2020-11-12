@@ -9,6 +9,8 @@ services:
       - POSTGRES_DB=expense-db
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+    volumes: 
+      - ./src/main/resources:/docker-entrypoint-initdb.d/
   
   expense-service:
     build: .

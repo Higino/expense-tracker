@@ -1,13 +1,13 @@
-INSERT INTO user (id,name,email) VALUES (1,'Macon','purus@dolorsit.edu');
-INSERT INTO user (id,name,email) VALUES (2,'Reese','blandit@Cras.co.uk');
-INSERT INTO user (id,name,email) VALUES (3,'Wayne','luctus@Maecenas.co.uk');
-INSERT INTO user (id,name,email) VALUES (4,'Stone','Cras@venenatis.co.uk');
-INSERT INTO user (id,name,email) VALUES (5,'Tashya','leo.elementum@egetnisi.net');
-INSERT INTO user (id,name,email) VALUES (6,'Yvonne','euismod@Phasellus.co.uk');
-INSERT INTO user (id,name,email) VALUES (7,'Sasha','a.sollicitudin.orci@lobortisClass.net');
-INSERT INTO user (id,name,email) VALUES (8,'Lionel','vulputate.ullamcorper@acmetusvitae.ca');
-INSERT INTO user (id,name,email) VALUES (9,'Mary','Aenean@Cras.org');
-INSERT INTO user (id,name,email) VALUES (10,'Ignacia','consequat@vulputate.net');
+INSERT INTO users (id,name,email) VALUES (1,'Macon','purus@dolorsit.edu');
+INSERT INTO users (id,name,email) VALUES (2,'Reese','blandit@Cras.co.uk');
+INSERT INTO users (id,name,email) VALUES (3,'Wayne','luctus@Maecenas.co.uk');
+INSERT INTO users (id,name,email) VALUES (4,'Stone','Cras@venenatis.co.uk');
+INSERT INTO users (id,name,email) VALUES (5,'Tashya','leo.elementum@egetnisi.net');
+INSERT INTO users (id,name,email) VALUES (6,'Yvonne','euismod@Phasellus.co.uk');
+INSERT INTO users (id,name,email) VALUES (7,'Sasha','a.sollicitudin.orci@lobortisClass.net');
+INSERT INTO users (id,name,email) VALUES (8,'Lionel','vulputate.ullamcorper@acmetusvitae.ca');
+INSERT INTO users (id,name,email) VALUES (9,'Mary','Aenean@Cras.org');
+INSERT INTO users (id,name,email) VALUES (10,'Ignacia','consequat@vulputate.net');
 
 INSERT INTO category (id,name, description) VALUES (1,'Quality Assurance','diam luctus lobortis. Class aptent taciti sociosqu ad litora torquent');
 INSERT INTO category (id,name, description) VALUES (2,'Security', 'nec tellus. Nunc lectus pede, ultrices a, auctor non, feugiat');
