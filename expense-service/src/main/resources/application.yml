@@ -1,0 +1,16 @@
+spring:
+    hibernate:
+        hbm2ddl:
+            auto: create-only
+    jpa:
+        show-sql: true
+        hibernate:  
+            ddl-auto: update  
+            database-platform: org.hibernate.dialect.PostgreSQLDialect  
+            #database-platform: org.hibernate.dialect.H2Dialect
+
+    datasource:  
+        url: "jdbc:expense-db://localhost:5432/expense-db"  
+        #url: jdbc:h2:mem:expense-db
+        username: postgres  
+        password: postgres

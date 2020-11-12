@@ -1,0 +1,19 @@
+version: "3.8"
+   
+services:
+  db:
+    image: postgres
+    restart: always
+    #volumes:
+    #- ./src/main/resources:/docker-entrypoint-initdb.d/
+    environment:
+      - POSTGRES_DB=expense-db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+  expense-service:
+    build: .
+    image: expense-service
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
