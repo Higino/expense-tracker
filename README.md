@@ -25,12 +25,12 @@ Expense     *-- represents a -- >1 category
 
 ### Physical architecture
 
-nodejs                                springboort                        postgres
-(expensetracker)    <--tcp/ip-->   (expense-service)   <--tcp/ip-->   node 3 (postgresql)
+nodejs                             springboort                        postgres
+expensetracker    <--tcp/ip-->   expense-service   <--tcp/ip-->   postgresql
 
-(expensetracker): nodejs react app docker container exposing port 3000
-(expense-service): spring boot rest api docker container exposing port 8080
-(postgresql): postgres database docker container exposing port 5432
+ * expensetracker: nodejs react app docker container exposing port 3000
+ * expense-service: spring boot rest api docker container exposing port 8080
+ * postgresql: postgres database docker container exposing port 5432
 
 
 ##Building the entire solution
