@@ -25,7 +25,7 @@ Expense     *-- represents a -- >1 category
 
 ### Physical architecture
 
-    <nodejs>                     <springboort>                          <postgres>
+   <nodejs>                     <springboort>                          <postgres>
  (expensetracker)    <--tcp/ip-->   (expense-service)   <--tcp/ip-->        node 3 (postgresql)
 
 (expensetracker): nodejs react app docker container exposing port 3000
