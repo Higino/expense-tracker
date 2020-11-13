@@ -19,8 +19,8 @@ For reference the end points implemented so far are:
 
 ### Static architecture
 
-Expense     -- belongs to --> User
-            -- represents a -- > category
+Expense     *-- belongs to -->1 User
+Expense     *-- represents a -- >1 category
 
 ### Physical architecture
 
