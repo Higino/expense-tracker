@@ -36,5 +36,5 @@ Expense     *-- represents a -- >1 category
 ##Building the entire solution
 
 Docker composer file located in the root folder creates all three services (expensetracker, expense-service and postgres - along with the admin pgadmin console for ease of use)
-``` $ docker-compose up -- build
+``` $ docker-compose up -- build ```
 
