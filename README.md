@@ -37,5 +37,8 @@ expensetracker    <--tcp/ip-->   expense-service   <--tcp/ip-->   postgresql
 
 Docker composer file located in the root folder creates all three services (expensetracker, expense-service and postgres - along with the admin pgadmin console for ease of use)
 
-``` $ docker-compose up -- build ```
+``` 
+$ cd expense-service; ./mvnw install
+$ cd ..; docker-compose up -- build 
+```
 
