@@ -1,0 +1,29 @@
+version: "3.8"
+
+
+services:  
+  expensetracker:
+    extends:
+      file: ./expense-webapp/docker-compose.yml
+      service: expensetracker
+    depends_on: 
+      - expense-service
+
+  expense-service:
+    extends:
+      file: ./expense-service/docker-compose.yml
+      service: expense-service
+    depends_on: 
+      - expense-db
+
+  expense-db:
+    extends:
+      file: ./expense-service/docker-compose.yml
+      service: expense-db
+    depends_on: 
+      - pgadmin
+
+  pgadmin:
+    extends:
+      file: ./expense-service/docker-compose.yml
+      service: pgadmin

@@ -1,22 +1,39 @@
-# Read Me First
-The following was discovered as part of building this project:
+# Introduction
+Excpense tracket application is a sample demo springboot - react full stack application in which data is colected into a simple react application and persisted in a database through the use of a rest api exposed in /api
 
-* The original package name 'com.locoop.expense-tracker.api' is invalid and this project uses 'com.locoop.expensetracker.api' instead.
+# API contract/endpoints
+For reference the end points implemented so far are:
+/api/expenses
+/api/expense/{id}
+/api/categories
+/api/category/{id}
+
 
 # Getting Started
 
-### Reference Documentation
-For further reference, please consider the following sections:
+## Architecure
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/maven-plugin/reference/html/#build-image)
-* [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/htmlsingle/#using-boot-devtools)
-* [Spring Configuration Processor](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/htmlsingle/#configuration-metadata-annotation-processor)
-* [Spring Data JPA](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/htmlsingle/#boot-features-jpa-and-spring-data)
+### Runtime architecture
 
-### Guides
-The following guides illustrate how to use some features concretely:
+*Web Browser (react app)* --- http ---> *expense-webapp* <--- REST ---> *expense-service* --- JDBC ---> *expense-db*
 
-* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
+### Static architecture
+
+Expense     -- belongs to --> User
+            -- represents a -- > category
+
+### Physical architecture
+
+    << nodejs >>                     << springboort >>                          << postgres >>
+ (expensetracker)    <--tcp/ip-->   (expense-service)   <--tcp/ip-->        node 3 (postgresql)
+
+(expensetracker): nodejs react app docker container exposing port 3000
+(expense-service): spring boot rest api docker container exposing port 8080
+(postgresql): postgres database docker container exposing port 5432
+
+
+##Building the entire solution
+
+Docker composer file located in the root folder creates all three services (expensetracker, expense-service and postgres - along with the admin pgadmin console for ease of use)
+``` $ docker-compose up -- build
 
