@@ -25,8 +25,8 @@ Expense     *-- represents a -- >1 category
 
 ### Physical architecture
 
-   <nodejs>                     <springboort>                          <postgres>
- (expensetracker)    <--tcp/ip-->   (expense-service)   <--tcp/ip-->        node 3 (postgresql)
+nodejs                                springboort                        postgres
+(expensetracker)    <--tcp/ip-->   (expense-service)   <--tcp/ip-->   node 3 (postgresql)
 
 (expensetracker): nodejs react app docker container exposing port 3000
 (expense-service): spring boot rest api docker container exposing port 8080
@@ -36,5 +36,6 @@ Expense     *-- represents a -- >1 category
 ##Building the entire solution
 
 Docker composer file located in the root folder creates all three services (expensetracker, expense-service and postgres - along with the admin pgadmin console for ease of use)
+
 ``` $ docker-compose up -- build ```
 
