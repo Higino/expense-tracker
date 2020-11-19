@@ -1,6 +1,6 @@
 provider "aws" {
   region     = "eu-west-1"
-  profile    = "ginohotmail"
+  profile    = "dev_ops"
 }
 
 # AWS EC2 instance hosting expense service api
@@ -21,8 +21,9 @@ resource "aws_instance" "expT-server1" {
       #!/bin/bash
       sudo apt update -y
       sudo apt install docker.io apache2 docker docker-compose -y
-      git clone https://github.com/Higino/expense-tracker.git
-      cd expense-tracker/
+      sudo cd /home/ubuntu; sudo git clone https://github.com/Higino/expense-tracker.git
+      sudo cd expense-tracker/expense-service
+      sudo docker-compose up expense-db expense-service &
       sudo systemctl start apache2
       sudo bash -c 'docker -v > /var/www/html/index.html'
       EOF
@@ -107,6 +108,13 @@ resource "aws_security_group" "allow_ssh_and_web_traffic" {
     description = "SSH from VPC"
     from_port   = 22
     to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+ingress {
+    description = "Expense Service API access port from VPC"
+    from_port   = 8080
+    to_port     = 8080
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
