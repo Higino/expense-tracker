@@ -13,8 +13,7 @@ services:
       - ./src/main/resources:/docker-entrypoint-initdb.d/
   
   expense-service:
-    build: .
-    image: expense-service
+    image: ginolocoop/expense-service
     container_name: expense-service
     ports:
       - "8080:8080"

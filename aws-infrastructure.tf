@@ -20,7 +20,9 @@ resource "aws_instance" "expT-server1" {
   user_data = <<-EOF
       #!/bin/bash
       sudo apt update -y
-      sudo apt install docker.io apache2 docker -y
+      sudo apt install docker.io apache2 docker docker-compose -y
+      git clone https://github.com/Higino/expense-tracker.git
+      cd expense-tracker/
       sudo systemctl start apache2
       sudo bash -c 'docker -v > /var/www/html/index.html'
       EOF
