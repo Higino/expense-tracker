@@ -33,7 +33,7 @@ expensetracker    <--tcp/ip-->   expense-service   <--tcp/ip-->   postgresql
  * postgresql: postgres database docker container exposing port 5432
 
 
-##Building the entire solution
+## Building the entire solution
 
 Docker composer file located in the root folder creates all three services (expensetracker, expense-service and postgres - along with the admin pgadmin console for ease of use)
 
