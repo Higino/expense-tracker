@@ -42,3 +42,7 @@ $ cd expense-service; ./mvnw install
 $ cd ..; docker-compose up -- build 
 ```
 
+
+### AWS infrastrtucture setup in terraform
+
+<img src="./graph.svg">

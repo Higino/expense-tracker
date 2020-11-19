@@ -20,9 +20,9 @@ resource "aws_instance" "expT-server1" {
   user_data = <<-EOF
       #!/bin/bash
       sudo apt update -y
-      sudo apt install apache2 -y
+      sudo apt install docker.io apache2 docker -y
       sudo systemctl start apache2
-      sudo bash -c 'echo your very first web server > /var/www/html/index.html'
+      sudo bash -c 'docker -v > /var/www/html/index.html'
       EOF
 }
 resource "aws_network_interface" "expT-server1-nic" {
