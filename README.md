@@ -46,3 +46,5 @@ $ cd ..; docker-compose up -- build
 ### AWS infrastrtucture setup in terraform
 
 <img src="./graph.svg">
+
+Note: Regenerate graph by installing graphviz (ex. ``` grew install graphviz) ``` and executing the following command: ``` terraform graph | dot -Tsvg > graph.svg ``` 
