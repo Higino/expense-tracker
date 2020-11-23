@@ -14,7 +14,7 @@ resource "aws_instance" "expT-server1" {
   }
 
   tags = {
-      Name  = "et-server1"
+    Name  = "et-server1"
   }
 
   user_data = <<-EOF
@@ -28,6 +28,7 @@ resource "aws_instance" "expT-server1" {
       sudo bash -c 'docker -v > /var/www/html/index.html'
       EOF
 }
+
 resource "aws_network_interface" "expT-server1-nic" {
   subnet_id       = aws_subnet.expT-production-subnet.id
   security_groups = [aws_security_group.allow_ssh_and_web_traffic.id]

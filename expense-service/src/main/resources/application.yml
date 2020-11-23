@@ -16,7 +16,7 @@ spring:
     #datasource:  
         #url: jdbc:h2:mem:expense-db
     datasource:  
-        url: "jdbc:postgresql://expense-db:5432/expense-db"  
+        url: "jdbc:postgresql://expense-db:5432/expense_db"  
         username: postgres  
         password: postgres
 
