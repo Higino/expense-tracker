@@ -33,6 +33,4 @@ services:
     ports:
       - "${PGADMIN_PORT:-5050}:80"
     restart: unless-stopped
-    depends_on: 
-      - expense-db
-
+    

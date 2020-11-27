@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import "react-d3-treemap/dist/react.d3.treemap.css";
 
 class Home extends Component {
     state = { mydata: {} }
