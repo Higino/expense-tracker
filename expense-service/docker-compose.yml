@@ -5,18 +5,24 @@ services:
     container_name: expense-db
     image: postgres
     restart: always
+    ports: 
+      - "5432:5432"
     environment:
       - POSTGRES_DB=expense_db
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     volumes: 
       - ./src/main/resources:/docker-entrypoint-initdb.d/
+
   
   expense-service:
     image: ginolocoop/expense-service
+    build: .
     container_name: expense-service
     ports:
       - "8080:8080"
+    depends_on: 
+      - expense-db
 
   pgadmin:
     container_name: pgadmin
@@ -27,4 +33,6 @@ services:
     ports:
       - "${PGADMIN_PORT:-5050}:80"
     restart: unless-stopped
+    depends_on: 
+      - expense-db
 

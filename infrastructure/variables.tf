@@ -1,5 +1,5 @@
 variable "aws_profile" {
-    default = "ginohotmail"
+    default = "dev_ops"
     type = string
 }
 
