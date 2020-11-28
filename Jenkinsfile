@@ -10,7 +10,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh '''./expense-service/mvw install
+        sh '''./expense-service/mvnw install
 '''
       }
     }
