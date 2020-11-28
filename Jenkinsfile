@@ -8,5 +8,12 @@ pipeline {
       }
     }
 
+    stage('Build') {
+      steps {
+        sh '''./expense-service/mvw install
+'''
+      }
+    }
+
   }
 }
