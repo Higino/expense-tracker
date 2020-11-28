@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Initialize') {
       steps {
-        sh 'cd /expense-service'
+        sh 'cd ./expense-service'
       }
     }
 
